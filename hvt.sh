@@ -8,14 +8,14 @@ echo -en "[+] Created by : https://github.com/Freshnuts\n"
 echo -en "\n======================================================================\n"
 
 function usage() {
-if [[ "$#" -lt 1 ]]
+if [[ "$#" -lt 2 ]]
 then
-    echo -en "usage: $0 <url>\n"
+    echo -en "usage: $0 <url> </path/file>\n"
     echo
     exit
 fi
 }
-usage $1
+usage $1 $2
 
 while read p;
 do
@@ -23,6 +23,6 @@ do
     sleep 1
 	curl -vX $p "$1" --max-time 3
 	echo -en "\n======================================================================\n"
-done < verb_list
+done < $2
 
 exit
