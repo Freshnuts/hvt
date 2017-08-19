@@ -9,7 +9,6 @@ function usage() {
 if [[ "$#" -lt 2 ]]
 then
     echo -en "usage: $0 <url> </path/file>\n"
-    echo
     exit
 fi
 }
